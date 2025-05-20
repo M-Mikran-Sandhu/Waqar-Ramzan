@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqar Ramzan - Business Professional Portfolio</title>
+    <link rel="icon" href="https://i.pinimg.com/736x/8c/04/1e/8c041e2a2fd61316219bae0d353cbc17.jpg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap');
+
+        :root {
+            --primary: #1a3e72;
+            --secondary: #2a5a8f;
+            --accent: #d4af37;
+            --background: #f8f9fa;
+            --text: #333333;
+            --white: #ffffff;
+            --light-gray: #e9ecef;
+            --dark-gray: #495057;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #122a52;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-accent:hover {
+            background-color: #c9a227;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Header styles */
+        .header {
+            background-color: var(--white);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .nav-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .nav-item a:hover {
+            color: var(--accent);
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:disabled {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+
+        .download-btn i.fa-spinner {
+            margin-right: 8px;
+        }
+
+        /* Success state */
+        .download-btn.success {
+            background-color: #4CAF50;
+        }
+
+        /* Error state */
+        .download-btn.error {
+            background-color: #f44336;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 10rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-picture {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* About section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Skills section */
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skills-group {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .skills-group:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills-group-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .skills-group-title i {
+            color: var(--accent);
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-rating {
+            color: var(--secondary);
+        }
+
+        .star {
+            color: #e0e0e0;
+        }
+
+        .star.filled {
+            color: var(--accent);
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+            transition: width 1s ease-in-out;
+        }
+
+        /* Experience section */
+        .experience-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-period, .experience-location {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .experience-period i, .experience-location i {
+            color: var(--accent);
+        }
+
+        .experience-responsibilities {
+            padding-left: 1.5rem;
+        }
+
+        .experience-responsibilities li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .experience-responsibilities li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Education section */
+        .education-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .education-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .education-details {
+            flex: 1;
+        }
+
+        .education-degree {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .education-institution {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .education-period {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .education-period i {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-link {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                align-items: center;
+            }
+           
+            .nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+            }
+           
+            .nav.mobile-nav-open {
+                display: block;
+            }
+           
+            .nav-list {
+                flex-direction: column;
+            }
+           
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+           
+            .mobile-nav-toggle {
+                display: block;
+            }
+           
+            .hero-title {
+                font-size: 2.2rem;
+            }
+           
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+           
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero {
+                padding: 8rem 0 3rem;
+            }
+
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        .whatsapp-button {
+            text-decoration: none;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000; /* Keep a high z-index for the button itself */
+            animation: pulse 1.5s infinite alternate; /* Add animation */
+            background: linear-gradient(to right, #0c0d0c, #206fc9) !important; /* Changed background color */
+        }
+
+        .whatsapp-button i {
+            /*margin-right: 7px;*/
+            margin-left:15px;
+        }
+
+        /* Floating/Fixed positioning on the left */
+        .whatsapp-fixed-left {
+            position: fixed;
+            bottom: 30px; /* Adjust vertical position */
+            left: 30px; /* Adjust horizontal position */
+            z-index: 99999; /* Extremely high z-index to stay on top */
+        }
+
+        /* Animation keyframes */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+        .nonedc {
+            text-decoration: none;
+            color: #f5ff69;
+        }
+        .nonedc:hover {
+            text-decoration: none;
+            color: #21fb8e;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="App">
+        <header class="header">
+            <div class="container header-container">
+                <h1 class="logo">Waqar <span>Ramzan</span></h1>
+                <nav class="nav" id="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-accent download-btn" onclick="generatePDF()">
+                                <i class="fas fa-download"></i> Download Resume
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle">☰</button>
+            </div>
+        </header>
+        <a
+        href="https://wa.me/+923338232314"
+        target="_blank"
+        class="whatsapp-button whatsapp-fixed-left">
+          Whatsapp
+        <i style="font-size:24px" class="fa fa-brands">&#xf232;</i>
+        </a>
+        <div id="resume-content">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <!-- Profile picture placeholder - replace with actual image -->
+                        <img src="https://i.pinimg.com/736x/72/4e/44/724e4434e9f473cb9791f90dfbc8c95c.jpg" alt="Waqar Ramzan" class="profile-picture">
+                        <h1 class="hero-title">Waqar Ramzan</h1>
+                        <p class="hero-subtitle">Sales Professional & Business Administrator</p>
+                        <p class="hero-description">Highly motivated and detail-oriented professional with a strong willingness to learn and grow in the industry. Possessing excellent communication, teamwork, and problem-solving skills, adaptable, and eager to take on new challenges. Proven commitment to delivering high-quality results. Seeking an opportunity to contribute and develop skills in a dynamic work environment.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary download-btn" onclick="generatePDF()">
+                                <i class="fas fa-download"></i> Download Resume
+                            </button>
+                            <a href="#contact" class="btn btn-accent">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section about">
+                <div class="container">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Highly motivated and detail-oriented professional with a strong willingness to learn and grow in the industry. Possessing excellent communication, teamwork, and problem-solving skills, adaptable, and eager to take on new challenges. Proven commitment to delivering high-quality results. Seeking an opportunity to contribute and develop skills in a dynamic work environment.</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> 0333 8232314</p>
+                                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ramzanwaqar178@gmail.com</p>
+                                <p><i class="fas fa-map-marker-alt"></i> <strong>Location: </strong> Gujranwala, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section skills">
+                <div class="container">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <div class="skills-content">
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-briefcase"></i> Professional Skills</h3>
+                            <div class="skills-list" id="professional-skills">
+                                <!-- Skills will be populated by JavaScript -->
+                            </div>
+                        </div>
+                       
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-language"></i> Languages</h3>
+                            <div class="skills-list" id="language-skills">
+                                <!-- Languages will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section experience">
+                <div class="container">
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="experience-content" id="experience-content">
+                        <!-- Experience will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section education">
+                <div class="container">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-content" id="education-content">
+                        <!-- Education will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact">
+                <div class="container">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="contact-content">
+                        <p style="text-align: center; margin-bottom: 2rem;">Feel free to reach out for business inquiries or opportunities.</p>
+                        <div style="text-align: center;">
+                            <a href="mailto:ramzanwaqar178@gmail.com" class="btn btn-accent">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/waqar-ramzan-a31b631a5" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/share/16bUDNBDyF/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/i_wqr_26?igsh=MWFlYzR1OWk0YWw1aw%3D%3D&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/+923338232314" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="copyright">&copy; <span id="current-year"></span> Waqar Ramzan. All Rights Reserved.</p>
+                <p class="mt-2">Designed with <i class="fas fa-heart text-red-500"></i> by  <a href="https://wa.me/+923494206922" class="nonedc">Muhammad Mikran Sandhu</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        // Resume data
+        const resumeData = {
+            "personal": {
+                "name": "Waqar Ramzan",
+                "phone": "0333 8232314",
+                "email": "ramzanwaqar178@gmail.com",
+                "location": "Lahore, Pakistan",
+                "summary": "Highly motivated and detail-oriented professional with a strong willingness to learn and grow in the industry. Possessing excellent communication, teamwork, and problem-solving skills, adaptable, and eager to take on new challenges. Proven commitment to delivering high-quality results. Seeking an opportunity to contribute and develop skills in a dynamic work environment."
+            },
+            "languages": [
+                {"name": "English", "proficiency": 4},
+                {"name": "Arabic", "proficiency": 3},
+                {"name": "Urdu", "proficiency": 5},
+                {"name": "Punjabi", "proficiency": 5}
+            ],
+            "skills": [
+                {"name": "Business Development", "proficiency": 5},
+                {"name": "Strategic Communication", "proficiency": 5},
+                {"name": "Team Leadership", "proficiency": 5},
+                {"name": "Client Relations", "proficiency": 5},
+                {"name": "Customer Service Excellence", "proficiency": 5},
+                {"name": "Sales Strategy", "proficiency": 5},
+                {"name": "Team Collaboration", "proficiency": 5},
+                {"name": "Project Management", "proficiency": 5},
+                {"name": "Adaptability", "proficiency": 5},
+                {"name": "Business Management", "proficiency": 5},
+                {"name": "Time Optimization", "proficiency": 5},
+                {"name": "Data Analysis (Excel)", "proficiency": 5},
+                {"name": "Market Research", "proficiency": 4},
+                {"name": "Negotiation", "proficiency": 4}
+            ],
+            "experience": [
+                {
+                    "position": "Sales Agent",
+                    "company": "AH Logistics Dispatch & Solution",
+                    "location": "Remote",
+                    "period": "April 2025 – Present",
+                    "responsibilities": [
+                        "Acquire new carrier clients by proactively identifying and engaging owner-operators and trucking companies seeking dispatch services to maximize earnings.",
+                        "Collaborate with dispatch teams to ensure seamless onboarding of new carriers and efficient transition to daily load assignment.",
+                        "Provide initial consultation and needs assessment to understand carrier preferences, equipment capabilities (e.g., 26' box trucks, 40' hotshots, 53' flatbeds), and desired operating regions.",
+                        "Develop and maintain strong relationships with carrier clients through regular check-ins and performance reviews.",
+                        "Monitor market trends and competitor activities to identify new business opportunities."
+                    ]
+                },
+                {
+                    "position": "Assistant Manager",
+                    "company": "Master Ballpoint Pen Industries (pvt.) Limited",
+                    "location": "Gujranwala",
+                    "period": "November 2022 – January 2023",
+                    "responsibilities": [
+                        "Assisted in overseeing daily operations, ensuring efficiency and productivity.",
+                        "Managed and supervised staff, providing training and performance feedback.",
+                        "Handled customer inquiries and resolved issues to maintain satisfaction.",
+                        "Assisted with inventory management and sales strategies.",
+                        "Coordinated with senior management to implement company policies and goals."
+                    ]
+                },
+                {
+                    "position": "Consultant",
+                    "company": "KQ Consultant",
+                    "location": "Gujranwala",
+                    "period": "February 2023 – June 2023",
+                    "responsibilities": [
+                        "Provided expert advice to clients on business strategies and operations.",
+                        "Conducted market research and analysis to identify growth opportunities.",
+                        "Developed and implemented business improvement plans.",
+                        "Facilitated training sessions and workshops for client teams.",
+                        "Monitored and reported on the effectiveness of implemented strategies."
+                    ]
+                }
+            ],
+            "education": [
+                {
+                    "degree": "Bachelor of Business Administration (BBA)",
+                    "institution": "Superior University, Lahore",
+                    "period": "March 2019 – October 2022"
+                },
+                {
+                    "degree": "Intermediate in Commerce (I.Com)",
+                    "institution": "Gift College, Gujranwala",
+                    "period": "March 2016 – March 2018"
+                },
+                {
+                    "degree": "Matriculation",
+                    "institution": "The Educators, Gujranwala",
+                    "period": "March 2005 – March 2015"
+                }
+            ]
+        };
+
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+            const mainNav = document.getElementById('main-nav');
+           
+            mobileNavToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('mobile-nav-open');
+                mobileNavToggle.textContent = mainNav.classList.contains('mobile-nav-open') ? '✕' : '☰';
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-item a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('mobile-nav-open');
+                    mobileNavToggle.textContent = '☰';
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Populate skills
+            populateSkills();
+           
+            // Populate experience
+            populateExperience();
+           
+            // Populate education
+            populateEducation();
+        });
+
+        // Render stars for skill ratings
+        function renderStars(count) {
+            let starsHTML = '';
+            for (let i = 0; i < 5; i++) {
+                starsHTML += `<span class="${i < count ? 'star filled' : 'star'}">★</span>`;
+            }
+            return starsHTML;
+        }
+
+        // Populate skills section
+        function populateSkills() {
+            const professionalSkillsContainer = document.getElementById('professional-skills');
+            const languageSkillsContainer = document.getElementById('language-skills');
+           
+            // Professional skills
+            resumeData.skills.forEach(skill => {
+                const skillHTML = `
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">${skill.name}</span>
+                            <span class="skill-rating">${renderStars(skill.proficiency)}</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: ${(skill.proficiency / 5) * 100}%"></div>
+                        </div>
+                    </div>
+                `;
+                professionalSkillsContainer.innerHTML += skillHTML;
+            });
+           
+            // Language skills
+            resumeData.languages.forEach(language => {
+                const languageHTML = `
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">${language.name}</span>
+                            <span class="skill-rating">${renderStars(language.proficiency)}</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: ${(language.proficiency / 5) * 100}%"></div>
+                        </div>
+                    </div>
+                `;
+                languageSkillsContainer.innerHTML += languageHTML;
+            });
+        }
+
+        // Populate experience section
+        function populateExperience() {
+            const experienceContainer = document.getElementById('experience-content');
+           
+            // Work experience
+            resumeData.experience.forEach(exp => {
+                let responsibilitiesHTML = '';
+                exp.responsibilities.forEach(resp => {
+                    responsibilitiesHTML += `<li>${resp}</li>`;
+                });
+               
+                const expHTML = `
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">${exp.position}</h3>
+                                <p class="experience-company">${exp.company}</p>
+                            </div>
+                            <div>
+                                <p class="experience-period"><i class="far fa-calendar-alt"></i> ${exp.period}</p>
+                                <p class="experience-location"><i class="fas fa-map-marker-alt"></i> ${exp.location}</p>
+                            </div>
+                        </div>
+                        <div class="experience-body">
+                            <ul class="experience-responsibilities">
+                                ${responsibilitiesHTML}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                experienceContainer.innerHTML += expHTML;
+            });
+        }
+
+        // Populate education section
+        function populateEducation() {
+            const educationContainer = document.getElementById('education-content');
+           
+            resumeData.education.forEach(edu => {
+                const eduHTML = `
+                    <div class="education-card">
+                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education-details">
+                            <h3 class="education-degree">${edu.degree}</h3>
+                            <p class="education-institution">${edu.institution}</p>
+                            <p class="education-period"><i class="far fa-calendar-alt"></i> ${edu.period}</p>
+                        </div>
+                    </div>
+                `;
+                educationContainer.innerHTML += eduHTML;
+            });
+        }
+
+        // Generate PDF resume with enhanced functionality
+        async function generatePDF() {
+            try {
+                // Get all download buttons
+                const downloadButtons = document.querySelectorAll('.download-btn');
+               
+                // Show loading state on all buttons
+                downloadButtons.forEach(btn => {
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+                    btn.disabled = true;
+                });
+               
+                const { jsPDF } = window.jspdf;
+                const input = document.getElementById('resume-content');
+               
+                // Scroll to top to ensure full content capture
+                window.scrollTo(0, 0);
+               
+                // Add slight delay to ensure proper rendering
+                await new Promise(resolve => setTimeout(resolve, 500));
+               
+                // Generate canvas with improved settings
+                const canvas = await html2canvas(input, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#ffffff',
+                    allowTaint: true,
+                    scrollX: 0,
+                    scrollY: 0,
+                    windowWidth: input.scrollWidth,
+                    windowHeight: input.scrollHeight
+                });
+               
+                // Create PDF with better layout
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+               
+                // Calculate image dimensions to maintain aspect ratio
+                const imgRatio = canvas.width / canvas.height;
+                const pdfRatio = pdfWidth / pdfHeight;
+               
+                let imgWidth, imgHeight;
+                if (imgRatio > pdfRatio) {
+                    imgWidth = pdfWidth - 20; // Add margins
+                    imgHeight = imgWidth / imgRatio;
+                } else {
+                    imgHeight = pdfHeight - 20; // Add margins
+                    imgWidth = imgHeight * imgRatio;
+                }
+               
+                // Center the image on the page
+                const x = (pdfWidth - imgWidth) / 2;
+                const y = (pdfHeight - imgHeight) / 2;
+               
+                // Add image to PDF
+                pdf.addImage(canvas, 'PNG', x, y, imgWidth, imgHeight);
+               
+                // Save the PDF
+                pdf.save('Waqar_Ramzan_Resume.pdf');
+               
+                // Show success state briefly
+                downloadButtons.forEach(btn => {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Download Complete!';
+                    btn.classList.add('success');
+                });
+               
+                // Reset buttons after delay
+                setTimeout(() => {
+                    downloadButtons.forEach(btn => {
+                        btn.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                        btn.disabled = false;
+                        btn.classList.remove('success');
+                    });
+                }, 2000);
+               
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+               
+                // Show error state
+                const downloadButtons = document.querySelectorAll('.download-btn');
+                downloadButtons.forEach(btn => {
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error! Try Again';
+                    btn.disabled = false;
+                    btn.classList.add('error');
+                });
+               
+                // Reset buttons after delay
+                setTimeout(() => {
+                    downloadButtons.forEach(btn => {
+                        btn.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                        btn.disabled = false;
+                        btn.classList.remove('error');
+                    });
+                }, 3000);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+               
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+               
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
